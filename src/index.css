@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Instrument+Serif:ital@0;1&family=Geist:wght@100..900&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "DM Mono", "Courier New", Courier, monospace;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+}
+
+@theme {
+  --color-bg-base: var(--bg-main);
+}
+
+:root {
+  --bg-main: #0A0A0B;
+  --bg-panel: #111113;
+  --bg-surface: #141416;
+  --bg-surface-hover: #1A1A1E;
+  --bg-modal: #1A191C;
+  --bg-inverse: #ffffff;
+  
+  --bg-overlay-02: rgba(255, 255, 255, 0.02);
+  --bg-overlay-03: rgba(255, 255, 255, 0.03);
+  --bg-overlay-04: rgba(255, 255, 255, 0.04);
+  --bg-overlay-05: rgba(255, 255, 255, 0.05);
+  --bg-overlay-10: rgba(255, 255, 255, 0.1);
+  
+  --border-light: rgba(255, 255, 255, 0.04);
+  --border-medium: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --bg-border-strong: #262529;
+
+  --text-primary: #F0EEE6;
+  --text-secondary: #A6A4AD;
+  --text-muted: #8E8B95;
+  --text-muted-dark: #6C6975;
+  --text-inverse: #111113;
+  
+  --accent-primary: #EADDCB;
+  --accent-hover: #F2E8DE;
+}
+
+[data-theme="girly-pop"] {
+  --bg-main: #FFF0F5;
+  --bg-panel: #FFFAFC;
+  --bg-surface: #FFE4E1;
+  --bg-surface-hover: #FFD1DC;
+  --bg-modal: #FFF0F5;
+  --bg-inverse: #2C1820;
+
+  --bg-overlay-02: rgba(255, 182, 193, 0.1);
+  --bg-overlay-03: rgba(255, 182, 193, 0.2);
+  --bg-overlay-04: rgba(255, 182, 193, 0.25);
+  --bg-overlay-05: rgba(255, 182, 193, 0.3);
+  --bg-overlay-10: rgba(255, 182, 193, 0.4);
+
+  --border-light: rgba(255, 182, 193, 0.3);
+  --border-medium: rgba(255, 182, 193, 0.5);
+  --border-strong: rgba(255, 182, 193, 0.8);
+  --bg-border-strong: #FFB6C1;
+
+  --text-primary: #4A2E35;
+  --text-secondary: #8E606A;
+  --text-muted: #A67B86;
+  --text-muted-dark: #D1A3AE;
+  --text-inverse: #FFFFFF;
+
+  --accent-primary: #FF69B4;
+  --accent-hover: #FF1493;
+}
+
+[data-theme="pinterest-minimal"] {
+  --bg-main: #FDFBF7;
+  --bg-panel: #F7F5EE;
+  --bg-surface: #F2EFE6;
+  --bg-surface-hover: #EBE6D9;
+  --bg-modal: #FDFBF7;
+  --bg-inverse: #1C1917;
+
+  --bg-overlay-02: rgba(0, 0, 0, 0.01);
+  --bg-overlay-03: rgba(0, 0, 0, 0.02);
+  --bg-overlay-04: rgba(0, 0, 0, 0.03);
+  --bg-overlay-05: rgba(0, 0, 0, 0.04);
+  --bg-overlay-10: rgba(0, 0, 0, 0.06);
+
+  --border-light: rgba(0, 0, 0, 0.03);
+  --border-medium: rgba(0, 0, 0, 0.06);
+  --border-strong: rgba(0, 0, 0, 0.1);
+  --bg-border-strong: #D6D2C4;
+
+  --text-primary: #292524;
+  --text-secondary: #57534E;
+  --text-muted: #78716C;
+  --text-muted-dark: #A8A29E;
+  --text-inverse: #FFFFFF;
+
+  --accent-primary: #A79782;
+  --accent-hover: #8C7B67;
+}
+
+body {
+  background-color: var(--bg-panel);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.prose {
+  --tw-prose-body: var(--text-primary);
+  --tw-prose-headings: var(--text-primary);
+  --tw-prose-lead: var(--text-secondary);
+  --tw-prose-links: var(--accent-primary);
+  --tw-prose-bold: var(--text-primary);
+  --tw-prose-counters: var(--text-muted);
+  --tw-prose-bullets: var(--text-muted);
+  --tw-prose-hr: var(--border-medium);
+  --tw-prose-quotes: var(--text-secondary);
+  --tw-prose-quote-borders: var(--accent-primary);
+  --tw-prose-captions: var(--text-muted);
+  --tw-prose-code: var(--text-primary);
+  --tw-prose-pre-code: var(--text-primary);
+  --tw-prose-pre-bg: var(--bg-surface);
+  --tw-prose-th-borders: var(--border-strong);
+  --tw-prose-td-borders: var(--border-medium);
+}
+.prose * {
+  color: inherit;
+}
+.prose pre {
+  background-color: var(--bg-overlay-02);
+  border: 1px solid var(--border-medium);
+}
+
+/* Base custom scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.input-glass {
+  background: rgba(255, 255, 255, 0.015);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.input-glass:focus-within {
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.text-gradient-platinum {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dot grid pattern */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
